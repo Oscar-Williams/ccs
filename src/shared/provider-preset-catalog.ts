@@ -29,6 +29,7 @@ export const PROVIDER_PRESET_IDS = [
   'requesty',
   'atlascloud',
   'cheaperinference',
+  'atmorouter',
 ] as const;
 
 export type ProviderPresetId = (typeof PROVIDER_PRESET_IDS)[number];
@@ -356,6 +357,20 @@ const RAW_PROVIDER_PRESET_DEFINITIONS: readonly ProviderPresetDefinition[] = [
     category: 'alternative',
     requiresApiKey: true,
     badge: 'OpenAI-compatible',
+  },
+  {
+    id: 'atmorouter',
+    name: 'AtmoRouter',
+    description:
+      'Anthropic-compatible gateway for Claude, GPT, Gemini, GLM, Kimi, Qwen and DeepSeek via atmorouter.dev',
+    baseUrl: 'https://atmorouter.dev',
+    defaultProfileName: 'atmorouter',
+    defaultModel: 'cc/claude-sonnet-4-6',
+    apiKeyPlaceholder: 'ar-...',
+    apiKeyHint: 'Create an API key at atmorouter.dev',
+    category: 'alternative',
+    requiresApiKey: true,
+    badge: 'Anthropic-compatible',
   },
 ];
 
